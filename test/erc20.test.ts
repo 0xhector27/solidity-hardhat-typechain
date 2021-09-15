@@ -19,6 +19,7 @@ describe("Token", () => {
   });
   describe("Mint", async () => {
     it("Should mint some tokens", async () => {
+      console.log(tokenAddress);
       const [deployer, user] = await ethers.getSigners();
       const tokenInstance = new TestToken__factory(deployer).attach(tokenAddress);
       const toMint = ethers.utils.parseEther("1");

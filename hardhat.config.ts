@@ -46,7 +46,7 @@ function createTestnetConfig(network: keyof typeof chainIds): NetworkUserConfig 
     accounts: {
       count: 10,
       initialIndex: 0,
-      mnemonic: MNEMONIC,
+      mnemonic: "object exact episode aerobic saddle boat edit beef project citizen wedding pear",
       path: "m/44'/60'/0'/0",
     },
     chainId: chainIds[network],
@@ -94,6 +94,9 @@ const config: HardhatUserConfig = {
     outDir: "typechain",
     target: "ethers-v5",
   },
+  mocha: {
+    timeout: 0
+  }
 };
 
 export default config;
