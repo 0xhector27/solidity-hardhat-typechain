@@ -40,20 +40,6 @@ task("accounts", "Prints the list of accounts", async (args, hre) => {
   }
 });
 
-function createTestnetConfig(network: keyof typeof chainIds): NetworkUserConfig {
-  const url: string = "https://" + network + ".infura.io/v3/" + INFURA_API_KEY;
-  return {
-    accounts: {
-      count: 10,
-      initialIndex: 0,
-      mnemonic: "object exact episode aerobic saddle boat edit beef project citizen wedding pear",
-      path: "m/44'/60'/0'/0",
-    },
-    chainId: chainIds[network],
-    url,
-  };
-}
-
 // You need to export an object to set up your config
 // Go to https://hardhat.org/config/ to learn more
 
@@ -65,12 +51,7 @@ const config: HardhatUserConfig = {
         mnemonic: MNEMONIC,
       },
       chainId: chainIds.hardhat,
-    },
-    mainnet: createTestnetConfig("mainnet"),
-    goerli: createTestnetConfig("goerli"),
-    kovan: createTestnetConfig("kovan"),
-    rinkeby: createTestnetConfig("rinkeby"),
-    ropsten: createTestnetConfig("ropsten"),
+    }
   },
   solidity: {
     compilers: [

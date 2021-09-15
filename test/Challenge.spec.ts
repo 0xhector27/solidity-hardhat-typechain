@@ -71,7 +71,7 @@ describe("Challenge", () => {
     ]);
   });
 
-  /* it("delegates incrementing of storage variables", async () => {
+  it("delegates incrementing of storage variables", async () => {
     // increment x
     (await challenge.incrementX(incrementor.address)).wait(6);
     expect(await challenge.x()).to.eq(BigNumber.from(1));
@@ -81,7 +81,7 @@ describe("Challenge", () => {
     // increment z
     (await challenge.incrementZ(incrementor.address)).wait(6);
     expect(await challenge.z()).to.eq(BigNumber.from(1));
-  }); */
+  });
 
   it("determines if an Ethereum account is a contract", async () => {
     expect(await challenge.isContract(challenge.address)).to.be.true;
